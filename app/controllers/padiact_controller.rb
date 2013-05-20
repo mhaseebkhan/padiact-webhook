@@ -8,7 +8,7 @@ class PadiactController < ApplicationController
     puts 'in hook '
     email = params[:data]['email']
     puts 'email: ' + email
-    Mailer.deliver_welcome_new_user email
+    Mailer.welcome_new_user(email).deliver
     User.create(email: email)
   end
 end
