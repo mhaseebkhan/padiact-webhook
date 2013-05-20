@@ -9,6 +9,7 @@ class PadiactController < ApplicationController
     email = params[:data]['email']
     puts 'email: ' + email
     Mailer.welcome_new_user(email).deliver
-    User.create(email: email)
+    User.find_or_create_by_email(email: email)
+    render layout: false
   end
 end
