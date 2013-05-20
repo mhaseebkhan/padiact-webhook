@@ -1,0 +1,2 @@
+module PadiactHelper
+end
